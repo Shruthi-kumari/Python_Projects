@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PDF Table Extractor To Excel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url("https://wallpapersmug.com/download/2560x1600/559360/3d-cubes-dark-4k.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      background-color: #f5f5f5; 
+      border: 1px solid #ddd; 
+      padding: 2px; /* Adjust padding to your preference */
+      margin-top: 80px; /* Space at the top */
+      margin-bottom: 10px; /* Space between header and main container */
+      width: 80%; /* Width of the header container */
+      max-width: 800px; /* Maximum width */
+    }
+
+    .header-container img {
+      max-height: 80px; /* Adjust height as needed */
+      margin-left: 120px;
+    }
+
+    h1 {
+      font-family: Times New Roman;
+      font-size: 2em; /* Adjust heading size */
+      color: rgba(9, 8, 8, 0.904);
+      margin-left: 10px;
+    }
+
+    .container {
+      margin-top: 30px;
+      padding: 30px; /* Adjust padding to your preference */
+      border: 1px solid #ddd; /* Border for visual separation */
+      border-radius: 5px; /* Rounded corners */
+      text-align: center;
+      width: 60%; /* Width of the main container */
+      max-width: 800px; /* Maximum width */
+      height: 120px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    form {
+      display: flex; /* Arrange elements horizontally */
+      justify-content: center; /* Center elements */
+      flex-wrap: wrap; /* Wrap elements if they overflow */
+    }
+
+    input[type="file"] {
+      padding: 10px 15px; /* Adjust padding as needed */
+      border: 1px solid #ccc; /* Border */
+      border-radius: 5px; /* Rounded corners */
+      cursor: pointer; /* Hand cursor on hover */
+      background-color: #fff; /* Light background for better contrast */
+      margin-right: 2px; /* Space between file input and submit button */
+      margin-bottom: 10px; /* Space below the file input */
+      margin-top: 30px;
+    }
+
+    input[type="file"]:hover {
+      background-color: #eee; /* Slightly darker background on hover */
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px; /* Adjust padding */
+      border: none; /* Remove default border */
+      border-radius: 5px;
+      background-color: #3498db; /* Blue button color */
+      color: #fff; /* White text */
+      cursor: pointer; /* Hand cursor on hover */
+      font-weight: bold; /* Bold text */
+      margin-bottom: 10px;
+      margin-top: 30px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2980b9; /* Darker blue on hover */
+    }
+
+    #message {
+      margin-top: 20px; /* Space between button and message */
+      color: rgb(243, 25, 25); /* Black text */ /* Replace with desired color */
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <img src="https://cms-cdn.pdfagile.com/free_pdf_to_excel_converter_5a85ba6195.png" alt="Logo"> <!-- Replace with your image URL -->
+    <h1>PDF Table Extractor to Excel</h1>
+  </div>
+  <div class="container">
+    <form method="POST" enctype="multipart/form-data" id="pdf-form">
+      <input type="file" name="file" accept=".pdf" required>
+      <input type="submit" value="Convert to Excel">
+    </form>
+    <div id="message">{{ message }}</div> 
+  </div>
+
+  <script>
+    // Clear the message when a new file is selected
+    document.getElementById('pdf-form').addEventListener('change', function() {
+      document.getElementById('message').innerText = '';
+    });
+  </script>
+</body>
+</html>
